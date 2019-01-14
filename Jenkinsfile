@@ -32,13 +32,13 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        sh "scp -i C:/'SSH Keys'/tomcat-demo.pem -o StrictHostKeyChecking=no **/target/*.* ec2-user@${params.tomcat_dev}:/var/lib/tomcat/webapps"
+                        sh "scp -i C:/'SSH Keys'/tomcat-demo.pem -o StrictHostKeyChecking=no **/target/webapp/*.* ec2-user@${params.tomcat_dev}:/var/lib/tomcat/webapps"
                     }
                 }
 
                 stage ("Deploy to Production"){
                     steps {
-                        sh "scp -i C:/'SSH Keys'/tomcat-demo.pem -o StrictHostKeyChecking=no **/target/*.* ec2-user@${params.tomcat_prod}:/var/lib/tomcat/webapps"
+                        sh "scp -i C:/'SSH Keys'/tomcat-demo.pem -o StrictHostKeyChecking=no **/target/webapps/*.* ec2-user@${params.tomcat_prod}:/var/lib/tomcat/webapps"
                     }
                 }
             }
