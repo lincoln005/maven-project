@@ -38,7 +38,7 @@ stages{
 
                 stage ("Deploy to Production"){
                     steps {
-                        sh "cp -i C:/'SSH Keys'/tomcat-demo.pem **/target/*.war ec2-user@${params.tomcat_prod}:/var/lib/tomcat7/webapps"
+                        bat "cp -i C:/'SSH Keys'/tomcat-demo.pem **/target/*.war ec2-user@${params.tomcat_prod}:/var/lib/tomcat7/webapps"
                     }
                 }
             }
