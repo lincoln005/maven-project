@@ -38,7 +38,7 @@ stages{
 
                 stage ("Deploy to Production"){
                     steps {
-                        sh "scp -i ~/.ssh/tomcat-key.pem C:\Users\I7Dell\projects\maven-project\webapp\target\webapp.war ec2-user@3.82.92.83:/var/lib/tomcat7/webapps"
+                        sh "scp -i ~/.ssh/tomcat-key.pem C:/Users/I7Dell/projects/maven-project/webapp/target/webapp.war ec2-user@3.82.92.83:/var/lib/tomcat7/webapps"
                     }
                 }
             }
