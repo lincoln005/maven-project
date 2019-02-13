@@ -22,7 +22,7 @@ stages{
             }
             post {
                 success {
-                    echo 'Now Archiving psckage...'
+                    echo 'Now Archiving package...'
                     archiveArtifacts artifacts: '**/target/*.war'
                 }
             }
@@ -32,13 +32,14 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        bat "winscp -i C:/Users/I7Dell/.ssh/tomcat-key.pem C:/Users/I7Dell/projects/maven-project/webapp/target/webapp.war ec2-user@3.82.246.59:/var/lib/tomcat7/webapps"
+                                                sh "scp -i /home/jenkins/tomcat-key.pem **/target/*.war ec2-user@${params.tomcat_dev}:/var/lib/tomcat7/webapps"
+
                     }
                 }
 
                 stage ("Deploy to Production"){
                     steps {
-                        bat "winscp -i C:/Users/I7Dell/.ssh/tomcat-key.pem C:/Users/I7Dell/projects/maven-project/webapp/target/webapp.war ec2-user@3.82.92.83:/var/lib/tomcat7/webapps"
+                        sh "scp -i /home/jenkins/tomcat-key.pem **/target/*.war ec2-user@${params.tomcat_prod}:/var/lib/tomcat7/webapps"
                     }
                 }
             }
