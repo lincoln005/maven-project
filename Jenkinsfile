@@ -32,7 +32,7 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                       scp -i "~/.ssh/tomcat-key.pem 'C:\Users\I7Dell\projects\maven-project\webapp\target\webapp.war' ec2-user@3.82.246.59:/var/lib/tomcat7/webapps"
+                      sh "scp -i ~/.ssh/tomcat-key.pem C:/Users/I7Dell/projects/maven-project/webapp/target/webapp.war ec2-user@3.82.246.59:/var/lib/tomcat7/webapps"
                     }
                 }
 
