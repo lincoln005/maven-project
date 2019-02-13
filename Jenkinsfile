@@ -1,7 +1,7 @@
 pipeline {
     agent any
-	
-	tools {
+
+tools {
         maven 'localMaven'
         jdk 'localJDK'
     }
@@ -22,7 +22,7 @@ stages{
             }
             post {
                 success {
-                    echo 'Now Archiving package...'
+                    echo 'Now Archiving...'
                     archiveArtifacts artifacts: '**/target/*.war'
                 }
             }
@@ -32,8 +32,7 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                                                sh "scp -i /home/jenkins/tomcat-key.pem **/target/*.war ec2-user@${params.tomcat_dev}:/var/lib/tomcat7/webapps"
-
+                        sh "scp -i /home/jenkins/tomcat-key.pem **/target/*.war ec2-user@${params.tomcat_dev}:/var/lib/tomcat7/webapps"
                     }
                 }
 
