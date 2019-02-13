@@ -32,7 +32,8 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        sh "scp -i /home/jenkins/tomcat-key.pem C:/Users/I7Dell/Documents/yaml.txt ec2-user@${params.tomcat_prod}:/home/ec2-user"
+                      sh "scp -i /home/jenkins/tomcat-key.pem C:/Users/I7Dell/Documents/yaml.txt ec2-user@${params.tomcat_prod}:/home/ec2-user"
+                    }
                 }
 
                 stage ("Deploy to Production"){
