@@ -7,8 +7,8 @@ tools {
     }
 
     parameters {
-         string(name: 'tomcat_dev', defaultValue: '3.93.240.149', description: 'Staging Server')
-         string(name: 'tomcat_prod', defaultValue: '18.204.216.99', description: 'Production Server')
+         string(name: 'tomcat_dev', defaultValue: '3.86.147.119', description: 'Staging Server')
+         string(name: 'tomcat_prod', defaultValue: '3.87.5.244', description: 'Production Server')
     }
 
     triggers {
@@ -32,13 +32,13 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                      sh "scp -i /home/jenkins/tomcat-key.pem **/target/*.war ec2-user@${params.tomcat_dev}:/var/lib/tomcat7/webapps"
+                      sh "scp -i C:\Users\I7Dell\.ssh\ec2.pem **/target/*.war ec2-user@${params.tomcat_dev}:/var/lib/tomcat7/webapps"
                     }
                 }
 
                 stage ("Deploy to Production"){
                     steps {
-                        sh "scp -i /home/jenkins/tomcat-key.pem **/target/*.war ec2-user@${params.tomcat_prod}:/var/lib/tomcat7/webapps"
+                        sh "scp -i C:\Users\I7Dell\.ssh\ec2.pem **/target/*.war ec2-user@${params.tomcat_prod}:/var/lib/tomcat7/webapps"
                     }
                 }
             }
