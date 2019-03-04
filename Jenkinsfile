@@ -27,13 +27,13 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                      sh "echo y | plink -ssh -i /C:/Users/I7Dell/.ssh/ec2.pem ec2-user@3.86.147.119 "exit" plink -ssh ec2-user@3.86.147.119 sh "ls"""
+                      sh "echo y | plink -ssh -i /C:/Users/I7Dell/.ssh/ec2.pem ec2-user@3.86.147.119 "exit" plink -ssh ec2-user@3.86.147.119"
                     }
                 }
 
                 stage ("Deploy to Prod"){
                     steps {
-                      sh "echo y | plink -ssh -i /C:/Users/I7Dell/.ssh/ec2.pem ec2-user@3.86.147.119" "exit" plink -ssh ec2-user@3.87.5.244 sh "ls"""
+                      sh "echo y | plink -ssh -i /C:/Users/I7Dell/.ssh/ec2.pem ec2-user@3.86.147.119" "exit" plink -ssh ec2-user@3.87.5.244"
                     }
                 }
             }
