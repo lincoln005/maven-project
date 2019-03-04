@@ -27,13 +27,13 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                      sh "scp -i 'C:\Users\I7Dell\.ssh\ec2.pem ec2-user@3.86.147.119' /C:/Users/I7Dell/projects/maven-project/webapp/src/main/webapp/webtest.txt  ec2-user@3.86.147.119:/var/lib/tomcat7/webapps"
+                      sh "scp -i /C:/Users/I7Dell/.ssh/ec2.pem ec2-user@3.86.147.119 /C:/Users/I7Dell/projects/maven-project/webapp/src/main/webapp/webtest.txt  ec2-user@3.86.147.119:/var/lib/tomcat7/webapps"
                     }
                 }
 
                 stage ("Deploy to Prod"){
                     steps {
-                      sh "scp -i 'C:\Users\I7Dell\.ssh\ec2.pem ec2-user@3.87.5.244' /C:/Users/I7Dell/projects/maven-project/webapp/src/main/webapp/webtest.txt  ec2-user@3.87.5.244:/var/lib/tomcat7/webapps"
+                      sh "scp -i scp -i /C:/Users/I7Dell/.ssh/ec2.pem ec2-user@3.87.5.244 /C:/Users/I7Dell/projects/maven-project/webapp/src/main/webapp/webtest.txt  ec2-user@3.87.5.244:/var/lib/tomcat7/webapps"
                     }
                 }
             }
