@@ -36,7 +36,7 @@ stages{
                     }
                 }
 
-                stage ("Deploy to Production"){
+                stage ("Deploy to Prod"){
                     steps {
                         sh "scp -i C:\Users\I7Dell\.ssh\ec2.pem **/target/*.war ec2-user@${params.tomcat_prod}:/var/lib/tomcat7/webapps"
                     }
