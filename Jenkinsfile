@@ -16,7 +16,7 @@ pipeline {
 
          string(name: 'tomcat_prod', defaultValue: '3.87.5.244', description: 'Production Server')
 
-         string(name: 'ppk_path', defaultValue: 'C:\Users\I7Dell\.ssh\ec2.ppk', description: 'full path to ppk file')
+         string(name: 'ppk_path', defaultValue: 'C:/Users/I7Dell/.ssh/ec2.ppk', description: 'full path to ppk file')
 
          string(name: 'war_path', defaultValue:"C:/Users/I7Dell/projects/maven-project/webapp/src/main/webapp/webtest.txt", description: 'full path to war file')
 
