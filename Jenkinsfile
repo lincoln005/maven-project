@@ -60,7 +60,7 @@ stages{
 
                     steps {
 
-                        bat "echo y | pscp -i ${ppk_path} ${war_path} ec2-user@${params.tomcat_dev}:${target_path}"
+                         sh "scp -B -vvv -i /C:/Users/I7Dell/.ssh/ec2.pem ec2-user@18.233.154.198 /C:/Users/I7Dell/projects/maven-project/webapp/src/main/webapp/webtest.txt  ec2-user@18.233.154.198:/var/lib/tomcat7/webapps"
 
                     }
 
@@ -72,7 +72,7 @@ stages{
 
                     steps {
 
-                        bat "echo y | pscp -i ${ppk_path} ${war_path} ec2-user@${params.tomcat_prod}:${target_path}"
+                        sh "scp -B -vvv -i scp -i /C:/Users/I7Dell/.ssh/ec2.pem ec2-user@3.82.150.153 /C:/Users/I7Dell/projects/maven-project/webapp/src/main/webapp/webtest.txt  ec2-user@3.82.150.153:/var/lib/tomcat7/webapps"
 
                     }
 
