@@ -4,9 +4,9 @@ pipeline {
 
       parameters {
 
-         string(name: 'tomcat_dev', defaultValue: '3.86.147.119 ', description: 'Staging Server')
+         string(name: 'tomcat_dev', defaultValue: '18.233.154.198', description: 'Staging Server')
 
-         string(name: 'tomcat_prod', defaultValue: '3.87.5.244', description: 'Production Server')
+         string(name: 'tomcat_prod', defaultValue: '3.82.150.153', description: 'Production Server')
 
          string(name: 'ppk_path', defaultValue: 'C:/Users/I7Dell/.ssh/ec2.ppk', description: 'full path to ppk file')
 
