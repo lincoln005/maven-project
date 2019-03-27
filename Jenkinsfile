@@ -1,4 +1,5 @@
 pipeline {
+    sgent any
     stages{
         stage('Build'){
             steps{
